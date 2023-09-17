@@ -10,8 +10,8 @@ RedditLite is a simplified Reddit-like web application that allows users to sear
 
 ## Table of Contents
 
-- [Wireframes](#wireframes-)
-- [Technologies Used](#technologies-used-)
+- [Wireframes](#wireframes-%EF%B8%8F)
+- [Technologies Used](#technologies-used-%EF%B8%8F)
 - [Features](#features-)
 - [Future Work](#future-work-)
 
