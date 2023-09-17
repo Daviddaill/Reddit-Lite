@@ -1,46 +1,45 @@
-# Getting Started with Create React App and Redux
+# RedditLite 📰
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
-## Available Scripts
 
-In the project directory, you can run:
+![Under Construction](https://www.fg-a.com/under-construction/under-construction-flashing-lights.gif)
 
-### `npm start`
+APP in progress...
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+RedditLite is a simplified Reddit-like web application that allows users to search for articles by keywords 🔍, explore curated categories 📚, preview article results 👀, and read detailed articles 📖. It's a responsive app built using React ⚛️ and Redux 🔄, making it easy to access content from various devices 📱💻.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Table of Contents
 
-### `npm test`
+- [Wireframes](#wireframes)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Future Work](#future-work)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Wireframes 🖼️
 
-### `npm run build`
+...coming soon...
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used 🛠️
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+RedditLite is built with the following technologies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React ⚛️: A JavaScript library for building user interfaces.
+- Redux 🔄: A state management library for managing application state.
+- HTML 🌐: HyperText Markup Language for structuring web content.
+- CSS 🎨: Cascading Style Sheets for styling the app.
+- API Integration 🌐📡: To fetch and display data from external sources.
+- Jest 🃏: A JavaScript testing framework.
+- Enzyme 🧪: A testing utility for React components.
 
-### `npm run eject`
+## Features ✨
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Search Articles**: Users can search for articles by entering keywords into the search bar.
+- **Explore Categories**: Users can browse and select articles from predefined categories.
+- **Preview Results**: Preview article results before clicking to view the full article.
+- **Responsive Design**: RedditLite is fully responsive, ensuring a great user experience on various devices.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Future Work 🚀
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to contribute and make RedditLite even better! 🌟
