@@ -1,10 +1,12 @@
+import articlesCSS from './articlesPreview.module.css'
+
 function ArticlesPreview(){
     return (
-        <>
-        <div> preview 1...</div>
-        <div> preview 2...</div>
-        <div> previe 3...</div>
-        </>
+        <section className={articlesCSS.articlesPreview} aria-label='Articles Preview'>
+        <div className={articlesCSS.card} > preview 1...</div>
+        <div className={articlesCSS.card}> preview 2...</div>
+        <div className={articlesCSS.card}> previe 3...</div>
+        </section>
     )
 }
 

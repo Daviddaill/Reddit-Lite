@@ -1,6 +1,8 @@
+import articleCSS from './article.module.css'
+
 function Article(){
     return (
-        <div> ARTICLE...</div>
+        <div className={articleCSS.card}> ARTICLE...</div>
     )
 }
 

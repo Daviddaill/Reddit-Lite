@@ -1,0 +1,29 @@
+.logo{
+ width:250px;
+ padding-left: 20px;
+}
+/*design second part of the logo independently */
+.logoSpan{
+    font-style: italic;
+    color:#1abc9c;
+    font-weight: bold;
+}
+/* all icons links  */
+.contact{ 
+    display:flex;
+    width:100%;
+    justify-content: center;
+}
+.contact p{
+    margin:0 40px;
+    
+}
+/*Manage footer for mobile */
+@media screen and (max-width: 480px) {
+    .contact p{
+        margin:0 20px;
+    }
+    .logo{
+        margin-bottom: 10px
+    }
+  }

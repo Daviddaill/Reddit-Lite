@@ -1,0 +1,43 @@
+.ul {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+}
+
+.li {
+    width: 100%;
+    padding:10px;
+}
+
+.li:hover {
+    background-color: #1abc9c;
+    color: white;
+    font-weight:bolder ;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 770px) and (min-width:481px) {
+    .ul {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+
+    .li {
+        padding: 10px;
+        flex: 0 1;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .ul {
+        width: 100%;
+        text-align: center;
+    }
+
+    .li {
+        text-align: center;
+        padding: 10px;
+    }
+}

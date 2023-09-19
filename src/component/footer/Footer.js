@@ -1,12 +1,15 @@
+import footerCss from './footer.module.css'
+
 function Footer(){
     return(
-        <footer>
-        <a href='./App'>Reddit<span idName='Lite'>Lite</span></a>
-        <div>
-        <a href = "mailto: dailleredavid@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href='https://github.com/Daviddaill' >Git-Hub</a>
-        <a href='https://portfolio-1-daviddaill.vercel.app/' >Portfolio </a>
-        <a href='https://www.linkedin.com/in/david-daillere-7a1103161/' >LinkedIn </a>       
+        <footer className='footer'>
+        <a href='./App' className={footerCss.logo}>Reddit<span className={footerCss.logoSpan}>Lite</span></a>
+        <div className={footerCss.contact}>
+        <p> <a href="tel:+94 766 553 844"><i className="fa-solid fa-mobile-screen fa-1x"></i></a></p>
+        <p> <a href="mailto: dailleredavid@gmail.com"><i className="fa-solid fa-envelope fa-1x"></i></a> </p>
+        <p><a href="https://github.com/Daviddaill"><i className="fa-brands fa-github fa-1x"></i></a></p>
+        <p><a href="https://www.linkedin.com/in/david-daillere-7a1103161/"><i
+                    className="fa-brands fa-linkedin fa-1x"></i></a></p>      
         </div>
       </footer>
     )
