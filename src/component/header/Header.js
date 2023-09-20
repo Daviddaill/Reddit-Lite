@@ -20,7 +20,7 @@ function Header() {
                 <input type="text" className={headerCSS.searchInput} id='searchBtn' placeholder="Search..." />
                 <i className="fas fa-search search-icon" id={headerCSS.searchIcon} type='submit'></i>
             </form>
-            <div className={headerCSS.menu} onClick={handleMenu}><i class="fa-solid fa-ellipsis-vertical" ></i></div>
+            <div className={headerCSS.menu} onClick={handleMenu}><i className="fa-solid fa-ellipsis-vertical" ></i></div>
             
         </header>
     )

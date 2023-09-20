@@ -7,3 +7,12 @@
     background-color: white;
 
 }
+
+.title{
+    text-align: center;
+}
+
+.media{
+    margin: auto;
+    display: block;
+}
