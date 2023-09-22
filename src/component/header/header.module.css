@@ -15,12 +15,7 @@
     border: 2px solid #ccc;
     border-radius: 15px;
     font-size: 16px;
-    background-color: white;
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    transition: width 0.4s ease-in-out;
-    
+    background-color: white;   
 }
 
 .input:focus {
@@ -40,7 +35,8 @@
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 20px; /* Rounded corners */
-    padding: 10px;
+    padding: 10px ;
+    margin-right:20px;
 }
 
 .searchInput {
@@ -65,11 +61,18 @@
 
 
 @media screen and (max-width:480px){
+    .logo{
+        font-size: 14px;
+        flex:0 2 20px;
+    }
     .menu{
-        display:inline;
+        display:inline-block;
+        
     }
 .searchContainer {
-    max-width:150px;
+    max-width:110px;
+    margin-right: 5px;
+    font-size: 14px;
 }
 .searchInput{
     max-width:85%

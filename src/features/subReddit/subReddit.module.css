@@ -1,12 +1,21 @@
-.div{
-    display:flex;
-    justify-content: space-around;
-    flex-wrap: wrap; 
-    align-items: center;  
-}
-.section{
-    display:flex;
-    justify-content: space-evenly;
+
+
+.section {
+    display: flex;
     align-items: center;
-    padding:0 10px;  
+    padding: 0 10px;
+    gap:5px;
+    /*make children content shorter if too big*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+}
+
+.name {
+    /*make the content shorter and append ellipsis*/
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }

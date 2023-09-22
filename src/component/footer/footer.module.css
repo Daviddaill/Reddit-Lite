@@ -11,8 +11,10 @@
 /* all icons links  */
 .contact{ 
     display:flex;
-    width:100%;
+    flex:1 2;
     justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 .contact p{
     margin:0 40px;
@@ -21,9 +23,7 @@
 /*Manage footer for mobile */
 @media screen and (max-width: 480px) {
     .contact p{
-        margin:0 20px;
+        margin:0 10px;
     }
-    .logo{
-        margin-bottom: 10px
-    }
+
   }

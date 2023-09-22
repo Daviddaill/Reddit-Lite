@@ -1,0 +1,92 @@
+
+
+.articlesPreview {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    padding: 0;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.titleMobile {
+    display: none;
+}
+
+.mainDiv {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#figure {
+    flex: 0 0 180px;
+    /* Set a fixed width for the image container */
+    padding: 10px;
+    margin: 0;
+}
+
+.media {
+    max-width: 100%;
+    height: auto;
+}
+
+#article {  
+    flex-grow: 1;/* Take up the remaining space */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /*stop the container from overflowing */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 10px;
+}
+
+.description,
+.title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+}
+.subReddit{
+	display: flex;
+flex-wrap: wrap;
+align-items: center;
+
+}
+
+
+
+
+@media screen and (max-width: 480px){
+     .title, .description{
+			display:none;
+		 }
+		 .titleMobile{
+			display:block;
+			white-space: nowrap;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+			padding:5px 10px;
+		 }
+		 .mainDiv{
+			justify-content: space-around;
+		 }
+		 .subReddit{
+			height:100%;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: space-evenly;
+			   /*make the content shorter and append ellipsis*/
+
+		 }
+	
+}
