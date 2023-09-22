@@ -3,16 +3,17 @@ import Title from '../title/Title';
 import Description from '../description/Description';
 import Media from '../media/Media'
 import SubReddit from '../subReddit/SubReddit';
-
+import { articles as data } from '../../data/data';
 
 function Article() {
-  const text = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.';
+const {key, img, title, description, text, subReddit, comments, votes} = data[Math.floor(Math.random() * (data.length -1))];
+
   return (
-    <section className={articlesCSS.card} aria-label='read article: '>
-      <Title className={articlesCSS.title} title='Article 1' />
+    <section className={articlesCSS.card} aria-label={description}>
+      <Title className={articlesCSS.title} title={title}/>
       <Description className={articlesCSS.description} text={text} preview={false} />
       <div className={articlesCSS.mediaContainer}>
-      <Media className={articlesCSS.media} source={"https://www.publicdomainpictures.net/pictures/320000/nahled/background-image.png"} description='description here' />
+      <Media className={articlesCSS.media} source={img} description={description} />
       <SubReddit className={articlesCSS.subReddit} subReddit='David d.' vote='234' comments='43' />
       </div>
       

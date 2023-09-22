@@ -59,6 +59,8 @@ h1 {
 #searchIcon {
     padding: 6px;
     border-radius: 100%;
+    border: none;
+    background-color: rgb(255, 253, 253);
     color: #000000;
     cursor: pointer;
 }
