@@ -14,7 +14,7 @@ const handleMenu = () => {
 
 function Header() {
 	return (
-		<header className='header'>
+		<header className={headerCSS.header} >
 			<h1 className={headerCSS.logo}>Reddit<span className={headerCSS.logoSpan}>Lite</span></h1>
 			<form className={headerCSS.searchContainer}>
 				<input type="text" className={headerCSS.searchInput} id='searchBtn' placeholder="Search..." />

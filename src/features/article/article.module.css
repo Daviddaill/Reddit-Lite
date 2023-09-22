@@ -1,16 +1,17 @@
+/* Main container */
 .card {
     padding: 20px;
     margin: 10px 0;
     width: 100%;
     border-radius: 6px;
     background-color: white;
-
 }
 
 .title {
     text-align: center;
     padding:10px 20px;
 }
+
 .mediaContainer{
   margin: auto;
   padding:0 20px;
@@ -23,9 +24,14 @@
     max-width:700px;
     display: block;
     padding:10px 20px;
-
 }
 
+.description{
+  padding:20px;
+  text-align:justify;
+}
+
+/*  parent container for: votes, comments, and subreddit sections */
 .subReddit {
   margin-top:20px;
     display: flex;
@@ -36,12 +42,8 @@
     flex-wrap: wrap;
     padding:10px 0;
 }
-.description{
-  padding:20px;
-  text-align:justify;
 
-}
-
+/* on large screens, display subreddit container on the side of media  */
 @media screen and (max-width:1080px) {
   .mediaContainer{
   margin: auto;

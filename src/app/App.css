@@ -1,3 +1,4 @@
+/***  GENERAL STYLING SECTION  ***/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,109 +10,27 @@ body {
   font-family: Arial;
   margin: 0;
 }
-
-/* Header/logo Title */
-.header {
-  margin: 0;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 50px;
-}
-
-h1 {
-  font-size: 25px;
-  padding: 0 20px;
-}
-
-@media screen and (max-width:480px) {
-  .header {
-    justify-content: space-between;
-  }
-
-  h1 {
-    font-size: 18px;
-  }
-}
-
+/* all link to be style here */
 a {
   text-decoration: none;
   color: black
 }
+/*** End OF GENERAL STYLING SECTION ***/
 
-/* Column container */
+/* *** COMPONENT STYLING  **** */
+
+/* container for Navigation bar and main content (dispay as column on smaller screen */
 .row {
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
+  overflow: hidden;  /* disable scroling so only the content container is scrollable */
 }
 
-
-/* Sidebar/ left column */
-.nav {
-  width: 250px;
-  margin: 0;
-  padding: 0;
-  border-right: 1px solid rgb(226, 225, 225);
-}
-
-
-/* Main column */
-.content {
-  padding: 10px;
-  width: calc(100% - 250px);
-  background-color: rgb(239, 239, 239);
-  height: calc(100vh - 50px - 35px);
-  overflow-x: scroll;
-}
-
-/* Nav and main for tablet */
-/* Nav bar on top */
+/* display Childrens container as column for smaller screen */
 @media screen and (max-width: 770px) {
   .row {
     flex-direction: column;
   }
-
-  .nav,
-  .content {
-    width: 100%;
-  }
-
-  .nav {
-    min-height: 40px;
-    padding: 0;
-    display: flex;
-    border-right: none;
-    border-bottom: 1px solid rgb(214, 213, 213);
-  }
 }
 
-@media screen and (max-width: 480px) {
-  .nav {
-    display: none;
-    justify-content: flex-end;
-  }
-}
-
-/* Footer */
-.footer {
-  min-height: 35px;
-  padding: 10px;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  position: sticky;
-  bottom: 0;
-}
-
-/* footer for phone */
-@media screen and (max-width: 480px) {
-  .footer {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-}
+/* END OF COMPONENT STYLING */

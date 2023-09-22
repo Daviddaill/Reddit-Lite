@@ -1,3 +1,14 @@
+/* Main container */
+.footer {
+    min-height: 35px;
+    padding: 10px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+  }
+
 .logo{
  width:250px;
  padding-left: 20px;
@@ -16,12 +27,19 @@
     flex-wrap: nowrap;
     align-items: center;
 }
+/* all icons are children of a unique p container */
 .contact p{
     margin:0 40px;
-    
 }
 /*Manage footer for mobile */
 @media screen and (max-width: 480px) {
+    /* display each element properly when children containers are too small */
+    .footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+      }
+
     .contact p{
         margin:0 10px;
     }

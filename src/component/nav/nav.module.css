@@ -1,4 +1,11 @@
-
+/* Main container */
+.nav {
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    border-right: 1px solid rgb(226, 225, 225);
+  }
+  
 .ul {
     list-style-type: none;
     margin: 0;
@@ -17,21 +24,39 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 770px) and (min-width:481px) {
+  /* TABLET STYLING */
+  /* nav under header */
+  @media screen and (max-width: 770px) {  
+    .nav {
+      width:100%;
+      min-height: 40px;
+      padding: 0;
+      display: flex;
+      border-right: none;
+      border-bottom: 1px solid rgb(214, 213, 213);
+    }
+  }
+  /* list display as row */
+  @media screen and (max-width: 770px) and (min-width:481px) {
     .ul {
         display: flex;
         width: 100%;
         flex-wrap: wrap;
         align-content: flex-start;
     }
-
     .li {
         padding: 10px;
         flex: 0 1;
     }
 }
-
-@media screen and (max-width: 480px) {
+  
+ /* Mobile Phone Styling */
+  @media screen and (max-width: 480px) {
+    /* nav display is dinamically controlled by Header.js  */
+    .nav {
+      display: none;
+      justify-content: flex-end;
+    }
     .ul {
         width: 100%;
         text-align: center;
@@ -41,4 +66,7 @@
         text-align: center;
         padding: 10px;
     }
-}
+  }
+
+
+

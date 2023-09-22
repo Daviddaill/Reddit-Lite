@@ -1,81 +1,97 @@
-.logo{
+/* Main container */
+.header {
+    height: 50px;
+    margin: 0;
+    background: #1abc9c;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+}
+
+h1 {
+    font-size: 25px;
+    padding: 0 20px;
+}
+
+.logo {
     text-align: left;
-    flex:0 2 33%;
+    flex: 0 2 33%;
 }
 
-.logoSpan{
- font-style: italic;
- color:rgb(196, 255, 213)
+.logoSpan {
+    font-style: italic;
+    color: rgb(196, 255, 213)
 }
 
-.input{
-    width: 130px;
-    height:30px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 15px;
-    font-size: 16px;
-    background-color: white;   
+/* remove kebab-menu icon on bigger screen */
+.menu {
+    display: none;
 }
 
-.input:focus {
-    width:250px;
-  }
-.menu{
-    display:none;
-    padding:0 20px;
-    justify-self:right
-}
+/* searchContainer contains 2 children:  input field and search icon */
 .searchContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 200px;
-    height:30px;
+    height: 30px;
     background-color: #fff;
     border: 1px solid #ccc;
-    border-radius: 20px; /* Rounded corners */
-    padding: 10px ;
-    margin-right:20px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-right: 20px;
 }
-
+/* input field */
 .searchInput {
     flex: 1 1;
-    height:28px;
+    height: 28px;
     border: none;
     outline: none;
     padding: 8px;
-    border-radius: 20px; /* Rounded corners */
+    border-radius: 20px;
+    /* Rounded corners */
 }
-
+/* iccon */
 #searchIcon {
-    padding:6px;
+    padding: 6px;
     border-radius: 100%;
     color: #000000;
-    cursor: pointer; /* Add a pointer cursor */
-}
-#searchIcon:hover{
-   background-color: rgb(220, 221, 220) 
+    cursor: pointer;
 }
 
+#searchIcon:hover {
+    background-color: rgb(220, 221, 220)
+}
 
 
-@media screen and (max-width:480px){
-    .logo{
+/* MOBILE PHONE STYLING */
+@media screen and (max-width:480px) {
+    .header {
+        justify-content: space-between;
+    }
+
+    /* reduce logo size */
+    .logo {
+        font-size: 18px;
         font-size: 14px;
-        flex:0 2 20px;
     }
-    .menu{
-        display:inline-block;
-        
+    /* display Kebab-menu icon */
+    .menu {
+        display: inline-block;
+        padding: 0 20px;
+        justify-self: right;
     }
-.searchContainer {
-    max-width:110px;
-    margin-right: 5px;
-    font-size: 14px;
-}
-.searchInput{
-    max-width:85%
-}
-
+    /* reduce search bar size */
+    .searchContainer {
+        max-width: 110px;
+        margin-right: 5px;
+        font-size: 14px;
+    }
+    .searchInput {
+        max-width: 85%
+    }
 }
