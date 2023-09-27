@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { createBrowserRouter } from 'react-router-dom';
 import './App.css'
 import Header from '../component/header/Header';
 import Nav from '../component/nav/Nav'
@@ -11,7 +12,7 @@ function App() {
 	const [navVisible, setNavVisible] = useState(false);
 
   return (
-    <div className="App">
+    <div className="App" title='App'>
       <Header 
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}

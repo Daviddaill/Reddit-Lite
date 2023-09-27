@@ -1,7 +1,7 @@
 
 const Title = ({ title,className }) => {
     return (
-        <h2 className={className}> {title} </h2>
+        <h2 className={className}>{title}</h2>
     )
 }
 
