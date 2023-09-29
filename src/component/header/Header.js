@@ -1,10 +1,13 @@
 import headerCSS from './header.module.css';
 import { getKeysBySearchTerm } from '../../util/helperFunctions';
 import { articles } from '../../data/data';
+import { useNavigate, createSearchParams } from 'react-router-dom';
 
 const Header = ({ searchTerm, setSearchTerm, setKeys, navVisible, setNavVisible }) => {
 
-	
+	//const [searchParams, setSearchParams] = useSearchParams();
+	const navigate = useNavigate();
+
 	const handleMenu = () => {
 		const element = document.getElementById("nav");
 		if (!navVisible) {
@@ -17,12 +20,22 @@ const Header = ({ searchTerm, setSearchTerm, setKeys, navVisible, setNavVisible 
 
 	const handleSubmit = (event) => {
 		event.preventDefault(); // Prevent form submission
-		const searchResults = getKeysBySearchTerm(searchTerm, articles);
-		setKeys(searchResults);
-		console.log(searchResults)
-		setSearchTerm(''); // Clear the input field
-	};
+		if (searchTerm !=="") {
+			const searchQueryParams = {
+				search: searchTerm
+			}
+			// use createSearchParams which takes an object and transforms it to a query string of the form order=ASC
+			const searchQueryString = createSearchParams(searchQueryParams);
 
+			// force a navigate by passing in an object with pathname indicating that path to navigate and search indicating the query parameters to append
+			navigate({
+				pathname: '/search',
+				search: `?${searchQueryString}`
+			})
+
+			setSearchTerm(''); // Clear the input field
+		};
+	}
 	return (
 		<header title="header" className={headerCSS.header}>
 			<h1 className={headerCSS.logo}>Reddit<span className={headerCSS.logoSpan}>Lite</span></h1>
@@ -33,7 +46,7 @@ const Header = ({ searchTerm, setSearchTerm, setKeys, navVisible, setNavVisible 
 					id='searchInput'
 					placeholder="Search..."
 					value={searchTerm}
-					onChange={(e) => setSearchTerm(e.target.value)}
+					onChange={(e) => setSearchTerm(e.target.value)}					
 				/>
 				<button type='submit' id={headerCSS.searchIcon} data-testid="submit-button">
 					<i className="fas fa-search search-icon"  ></i>

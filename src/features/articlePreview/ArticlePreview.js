@@ -3,11 +3,13 @@ import Title from '../title/Title';
 import Media from '../media/Media';
 import Description from '../description/Description';
 import SubReddit from '../subReddit/SubReddit';
+import { Link } from 'react-router-dom';
 
 
-function ArticlePreview({ img, title, description, text, subReddit, comments, vote }) {
+function ArticlePreview({id, img, title, description, text, subReddit, comments, vote }) {
   return (
     <div className={articleCSS.card} aria-label='article-preview' data-testid="article-preview">
+      <Link to={`/articles/${id-1}`}>
       <Title title={title} className={articleCSS.titleMobile} /> {/* title use only in mobile screen size */}
       <div className={articleCSS.mainDiv}>
         <figure className={articleCSS.section} id={articleCSS.figure}>
@@ -19,6 +21,8 @@ function ArticlePreview({ img, title, description, text, subReddit, comments, vo
           <SubReddit className={articleCSS.subReddit} vote={vote} comments={comments} subReddit={subReddit} type='preview' />
         </article>
       </div>
+      </Link>
+      
     </div>
   )
 }

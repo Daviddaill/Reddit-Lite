@@ -1,6 +1,7 @@
 import ArticlePreview from "../articlePreview/ArticlePreview";
 import { articles } from "../../data/data";
 
+
 const Articles = () => {
 
 
@@ -9,8 +10,9 @@ const Articles = () => {
       {
         articles.map((article) => {
           return (
+                      
             <ArticlePreview
-              key={article.key}
+              id={article.id}
               img={article.img}
               title={article.title}
               description={article.description}
@@ -19,6 +21,7 @@ const Articles = () => {
               comments={article.comments}
               vote={article.vote}
             />
+            
           )
         })
       }

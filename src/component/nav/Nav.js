@@ -1,17 +1,29 @@
 import navCSS from './nav.module.css'
+import { NavLink } from 'react-router-dom'
 
-function Nav(){
-    return (
-        <nav className={navCSS.nav} id='nav'>
-            <ul className={navCSS.ul}>
-                <li className={navCSS.li}>Popular </li>
-                <li className={navCSS.li}>Cinema </li>
-                <li className={navCSS.li}>Sport </li>
-                <li className={navCSS.li}>News </li>
-                <li className={navCSS.li}>Science </li>
-            </ul>
-        </nav>
-    )
+const categories = [
+	{ url: 'popular', title: "Popular" },
+	{ url: 'sport', title: "Sport" },
+	{ url: 'news', title: "News" },
+	{ url: 'science', title: "Science" },
+]
+
+function Nav() {
+	return (
+		<nav className={navCSS.nav} id='nav'>
+			<ul className={navCSS.ul}>
+				{
+					categories.map((category) => {
+						return (
+							<NavLink className={({ isActive }) => isActive? navCSS.activeNavLink : navCSS.inactiveNavLink} to={category.url}>
+								<li className={navCSS.li}> {category.title} </li>
+							</NavLink>
+						)
+					})
+				}
+			</ul>
+		</nav>
+	)
 }
 
 export default Nav

@@ -23,6 +23,10 @@
     font-weight:bolder ;
     cursor: pointer;
 }
+.activeNavLink{
+  font-weight: bold;
+}
+
 
   /* TABLET STYLING */
   /* nav under header */

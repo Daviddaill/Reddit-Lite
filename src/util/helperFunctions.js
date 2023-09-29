@@ -7,9 +7,9 @@ export const getKeysBySearchTerm = (input, articleList) => {
   
   
     // Look for objects where title contains input and push their keys into the array
-    articleList?.forEach(({title, key}) => {
+    articleList?.forEach(({title, id}) => {
       if ( input && title.toLowerCase().includes(input.toLowerCase())) {
-        keys.push(key);
+        keys.push(id);
       }
     });
     return keys; 

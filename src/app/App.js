@@ -1,32 +1,35 @@
-import React, {useState} from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+
+import {
+  Route, BrowserRouter, Routes
+} from "react-router-dom";
 import './App.css'
-import Header from '../component/header/Header';
-import Nav from '../component/nav/Nav'
-import Footer from '../component/footer/Footer';
-import Content from '../component/content/Content';
+import AppLayout from './AppLayout';
+import Articles from "../features/articles/Articles";
+import Article from "../features/article/Article";
+import Category from "../component/category/Category";
+import Search from "../features/search/Search";
+import ErrorPage from "../component/errorPage/ErrorPage";
+
+
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState('');
-	const [keys, setKeys] = useState('');
-	const [navVisible, setNavVisible] = useState(false);
+
 
   return (
-    <div className="App" title='App'>
-      <Header 
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        keys={keys}
-        setKeys={setKeys}
-        navVisible={navVisible}
-        setNavVisible={setNavVisible}
-      />
-      <div className='row'>
-      <Nav />
-      <Content />
-      </div> 
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AppLayout />} errorElement={<ErrorPage/>} >
+          <Route index element={<Category />} />
+          <Route path=":categoryId" element={<Category />} />         
+          <Route path="/articles" element={<Articles />} ></Route>
+          <Route path="/articles/:id" element={<Article />} />
+          <Route path="/search" element={<Search />} />
+
+        </Route>
+      </Routes>
+    </BrowserRouter>
+
+
   );
 }
 

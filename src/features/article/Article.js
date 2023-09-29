@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 import articlesCSS from './article.module.css'
 import Title from '../title/Title';
 import Description from '../description/Description';
@@ -8,8 +9,9 @@ import { articles as data } from '../../data/data';
 
 
 function Article() {
-  const {key, img, title, description, text, subReddit, comments, vote} = data[0];
-
+  const { id }= useParams()
+  const { img, title, description, text, subReddit, comments, vote} = data[id];
+  
   return (
     <section className={articlesCSS.card} aria-label={'article'}>
       <Title className={articlesCSS.title} title={title} />

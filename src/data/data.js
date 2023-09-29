@@ -1,26 +1,28 @@
 export const articles=[
   {
-      key: "1",
-      img: "https://picsum.photos/150/150?random=42",
-      title: "Funny Dog Pic",
-      description: "Description for Image 1",
-      text: "5oX5V1Hnv7JJhN14vy4PFtLmQJkcL9jcGHBM0BGQ E4hiQic1I3JVUzHXH3w0Lll6LSduC4QO6",
-      subReddit: "SubReddit1",
-      comment: "6304",
-      vote: '1716'
+      "id": "1",
+      "img": "https://picsum.photos/150/150?random=42",
+      "title": "Funny Dog Pic",
+      "description": "Description for Image 1",
+      "text": "5oX5V1Hnv7JJhN14vy4PFtLmQJkcL9jcGHBM0BGQ E4hiQic1I3JVUzHXH3w0Lll6LSduC4QO6",
+      "subReddit": "SubReddit1",
+      "comments": 6304,
+      "vote": 1716,
+      "category": 'science'
   },
   {
-      "key": "2",
+      "id": "2",
       "img": "https://picsum.photos/150/150?random=901",
       "title": "Funny Dog Pic",
       "description": "Description for Image 2",
       "text": "6APcBshjps1AaL1AIHXrKH11BcQK4qSHjH rBJJ9EQ2dvWvfp7XgZV516VVxFVL4y",
       "subReddit": "SubReddit2",
       "comments": 4046,
-      "vote": 5939
+      "vote": 5939,
+      "category": 'science'
   },
   {
-      "key": "3",
+      "id": "3",
       "img": "https://picsum.photos/150/150?random=805",
       "title": "Amazing Cat Photo",
       "description": "Description for Image 3",
@@ -30,7 +32,7 @@ export const articles=[
       "vote": 308
   },
   {
-      "key": "4",
+      "id": "4",
       "img": "https://picsum.photos/150/150?random=872",
       "title": "Awesome Technology Image",
       "description": "Description for Image 4",
@@ -40,7 +42,7 @@ export const articles=[
       "vote": 2920
   },
   {
-      "key": "5",
+      "id": "5",
       "img": "https://picsum.photos/150/150?random=244",
       "title": "Awesome Technology Image",
       "description": "Description for Image 5",
@@ -50,7 +52,7 @@ export const articles=[
       "vote": 3272
   },
   {
-      "key": "6",
+      "id": "6",
       "img": "https://picsum.photos/150/150?random=705",
       "title": "Funny Dog Pic",
       "description": "Description for Image 6",
@@ -60,7 +62,7 @@ export const articles=[
       "vote": 6973
   },
   {
-      "key": "7",
+      "id": "7",
       "img": "https://picsum.photos/150/150?random=406",
       "title": "Funny Dog Pic",
       "description": "Description for Image 7",
@@ -70,7 +72,7 @@ export const articles=[
       "vote": 260
   },
   {
-      "key": "8",
+      "id": "8",
       "img": "https://picsum.photos/150/150?random=627",
       "title": "Incredible Nature Shot",
       "description": "Description for Image 8",
@@ -80,7 +82,7 @@ export const articles=[
       "vote": 4260
   },
   {
-      "key": "9",
+      "id": "9",
       "img": "https://picsum.photos/150/150?random=229",
       "title": "Bizarre Adventure Snapshot",
       "description": "Description for Image 9",
@@ -90,7 +92,7 @@ export const articles=[
       "vote": 6406
   },
   {
-      "key": "10",
+      "id": "10",
       "img": "https://picsum.photos/150/150?random=630",
       "title": "Awesome Technology Image",
       "description": "Description for Image 10",
@@ -100,7 +102,7 @@ export const articles=[
       "vote": 4651
   },
   {
-      "key": "11",
+      "id": "11",
       "img": "https://picsum.photos/150/150?random=407",
       "title": "Incredible Nature Shot",
       "description": "Description for Image 11",
@@ -110,7 +112,7 @@ export const articles=[
       "vote": 5768
   },
   {
-      "key": "12",
+      "id": "12",
       "img": "https://picsum.photos/150/150?random=900",
       "title": "Incredible Nature Shot",
       "description": "Description for Image 12",
@@ -123,4 +125,10 @@ export const articles=[
   
   
 
-  
+  export const categories={
+    science: ["1","2"],
+    popular:["1","2","3","4","5","6","7","8","9","10"],
+    sport: ["3","4"],
+    cinema: ["5","6"],
+    news:["7","8","9","10"]
+  }
