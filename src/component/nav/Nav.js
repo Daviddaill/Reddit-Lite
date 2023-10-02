@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const categories = [
 	{ url: 'popular', title: "Popular" },
-	{ url: 'sport', title: "Sport" },
+	{ url: 'sports', title: "Sports" },
 	{ url: 'news', title: "News" },
 	{ url: 'science', title: "Science" },
 ]
@@ -15,8 +15,8 @@ function Nav() {
 				{
 					categories.map((category) => {
 						return (
-							<NavLink className={({ isActive }) => isActive? navCSS.activeNavLink : navCSS.inactiveNavLink} to={category.url}>
-								<li className={navCSS.li}> {category.title} </li>
+							<NavLink className={({ isActive }) => isActive? navCSS.activeNavLink : navCSS.inactiveNavLink} to={category.url} key={category.id}>
+								<li className={navCSS.li} key={`li${category.id}`}> {category.title} </li>
 							</NavLink>
 						)
 					})

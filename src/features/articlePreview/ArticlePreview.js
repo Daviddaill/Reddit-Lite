@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 function ArticlePreview({id, img, title, description, text, subReddit, comments, vote }) {
   return (
     <div className={articleCSS.card} aria-label='article-preview' data-testid="article-preview">
-      <Link to={`/articles/${id-1}`}>
+      <Link to={`/articles/${id}`}>
       <Title title={title} className={articleCSS.titleMobile} /> {/* title use only in mobile screen size */}
       <div className={articleCSS.mainDiv}>
         <figure className={articleCSS.section} id={articleCSS.figure}>

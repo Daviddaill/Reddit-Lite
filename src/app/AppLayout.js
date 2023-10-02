@@ -7,7 +7,7 @@ import Content from '../component/content/Content';
 
 export default function AppLayout() {
     const [searchTerm, setSearchTerm] = useState('');
-    const [keys, setKeys] = useState('');
+    //const [keys, setKeys] = useState('');
     const [navVisible, setNavVisible] = useState(false);
 
     return (
@@ -15,8 +15,8 @@ export default function AppLayout() {
             <Header
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
-                keys={keys}
-                setKeys={setKeys}
+                //keys={keys}
+                //setKeys={setKeys}
                 navVisible={navVisible}
                 setNavVisible={setNavVisible}
             />

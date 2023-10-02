@@ -1,6 +1,11 @@
+import ReactMarkdown from "react-markdown";
+
 const Description = ({ text, className }) => {
+    const markdownText = text
     return (
-        <p className={className}>{text}</p>
+        <div className={className}>
+            <ReactMarkdown>{markdownText}</ReactMarkdown>
+        </div>
     )
 }
 

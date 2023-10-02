@@ -4,13 +4,29 @@ import Title from '../title/Title';
 import Description from '../description/Description';
 import Media from '../media/Media'
 import SubReddit from '../subReddit/SubReddit';
-import { articles as data } from '../../data/data';
+//import { articles as data } from '../../data/data';
+import { useDispatch, useSelector } from 'react-redux';
+import { isLoadingArticle, selectArticle, loadArticleById,  } from './articleSlice';
+import { useEffect } from 'react';
 
 
 
 function Article() {
+	const dispatch = useDispatch();
+	const article = useSelector(selectArticle);
+	const isLoading = useSelector(isLoadingArticle);
   const { id }= useParams()
-  const { img, title, description, text, subReddit, comments, vote} = data[id];
+ 
+ 
+	useEffect(() => {
+		dispatch(loadArticleById(id));
+	}, [dispatch, id]);
+ 
+	if (isLoading) {
+	  return <p>Loading...</p>;
+	}
+
+  const { img, title, description, text, subReddit, comments, vote} = article;
   
   return (
     <section className={articlesCSS.card} aria-label={'article'}>

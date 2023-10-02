@@ -1,24 +1,36 @@
 import ArticlePreview from "../../features/articlePreview/ArticlePreview";
-import {  articles } from "../../data/data";
-import {  useNavigate, useSearchParams } from "react-router-dom";
-import { getKeysBySearchTerm } from "../../util/helperFunctions";
+//import {  articles } from "../../data/data";
+import {   useSearchParams } from "react-router-dom";
+import { selectAllArticles, isLoading, searchByTerm } from "./searchSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+//import { getKeysBySearchTerm } from "../../util/helperFunctions";
 
 
 
 const Search = () => {
-    const [ searchParams, setSearchParams ] = useSearchParams();
-    
-	const search= searchParams.get('search');
+	//extract the searchParams  object
+    const [ searchParams ] = useSearchParams();
+	const dispatch = useDispatch();
+    //get the search query
+	const searchTerm= searchParams.get('search');
+	//get the articles object
+	const articlePreviews = useSelector(selectAllArticles);
+	//get the status
+	const isLoadingPreviews = useSelector(isLoading);
+
+	useEffect(() => {
+		dispatch(searchByTerm(searchTerm));
+	}, [dispatch, searchTerm]);
+ 
+	if (isLoadingPreviews) {
+	  return <p>Loading...</p>;
+	}
   
-    const articleIds = getKeysBySearchTerm(search, articles);
-    console.log(articleIds)
 	return (
 		<div >
 			{
-               		articleIds.map(id => {
-					console.log(id)
-                    const index= id-1
-					const article = articles[index];
+               		articlePreviews.map(article => {
 					return (<ArticlePreview
 						id={article.id}
 						img={article.img}

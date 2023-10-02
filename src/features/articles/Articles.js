@@ -12,6 +12,7 @@ const Articles = () => {
           return (
                       
             <ArticlePreview
+              key={article.id}
               id={article.id}
               img={article.img}
               title={article.title}

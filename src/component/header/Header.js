@@ -1,9 +1,7 @@
 import headerCSS from './header.module.css';
-import { getKeysBySearchTerm } from '../../util/helperFunctions';
-import { articles } from '../../data/data';
 import { useNavigate, createSearchParams } from 'react-router-dom';
 
-const Header = ({ searchTerm, setSearchTerm, setKeys, navVisible, setNavVisible }) => {
+const Header = ({ searchTerm, setSearchTerm,  navVisible, setNavVisible }) => {
 
 	//const [searchParams, setSearchParams] = useSearchParams();
 	const navigate = useNavigate();
@@ -26,7 +24,6 @@ const Header = ({ searchTerm, setSearchTerm, setKeys, navVisible, setNavVisible 
 			}
 			// use createSearchParams which takes an object and transforms it to a query string of the form order=ASC
 			const searchQueryString = createSearchParams(searchQueryParams);
-
 			// force a navigate by passing in an object with pathname indicating that path to navigate and search indicating the query parameters to append
 			navigate({
 				pathname: '/search',
