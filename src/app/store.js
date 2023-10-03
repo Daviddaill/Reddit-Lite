@@ -6,8 +6,11 @@ import searchReducer from '../features/search/searchSlice';
 
 export const store = configureStore({
   reducer: {
+    // Add the 'articlePreviews' slice reducer to the store
     articlePreviews: articlePreviewsReducer,
+    // Add the 'article' slice reducer to the store
     article: articleReducer,
+    // Add the 'search' slice reducer to the store
     search: searchReducer,
   },
 });

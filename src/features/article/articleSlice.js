@@ -1,7 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-
-
 export const loadArticleById = createAsyncThunk(
 	'article/loadArticleById',
 	async (id) => {
@@ -71,7 +69,6 @@ export const articleSlice = createSlice({
 
 export const selectArticle = (state) => state.article.article;
 export const selectComments= (state) => state.article.comments
-
 export const isLoadingArticle = (state) => state.article.isLoadingArticle;
 export const hasErrorArticle= (state) => state.article.hasError
 

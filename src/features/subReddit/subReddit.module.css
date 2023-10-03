@@ -1,11 +1,8 @@
-
-
 .section {
     display: flex;
     align-items: center;
     padding: 0 10px;
     gap:5px;
-    /*make children content shorter if too big*/
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -13,9 +10,7 @@
 }
 
 .name {
-    /*make the content shorter and append ellipsis*/
     white-space:nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
 }

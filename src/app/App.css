@@ -16,21 +16,3 @@ a {
   color: black
 }
 /*** End OF GENERAL STYLING SECTION ***/
-
-/* *** COMPONENT STYLING  **** */
-
-/* container for Navigation bar and main content (dispay as column on smaller screen */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;  /* disable scroling so only the content container is scrollable */
-}
-
-/* display Childrens container as column for smaller screen */
-@media screen and (max-width: 770px) {
-  .row {
-    flex-direction: column;
-  }
-}
-
-/* END OF COMPONENT STYLING */

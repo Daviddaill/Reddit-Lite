@@ -43,7 +43,7 @@ export const articlePreviewsSlice = createSlice({
         text: article.data.selftext,
         img: article.data.thumbnail,
         description: "",
-        vote: article.data.score,
+        votes: article.data.score,
         comments: article.data.num_comments,
         subReddit: article.data.author,
         
@@ -59,9 +59,7 @@ export const articlePreviewsSlice = createSlice({
 });
 
 export const selectAllPreviews = (state) => state.articlePreviews.articles;
-
 export const isLoading = (state) => state.articlePreviews.isLoadingArticlePreviews;
-export const hasError= (state) => state.articlePreviews.hasError
-
+export const hasError= (state) => state.articlePreviews.hasError;
 
 export default articlePreviewsSlice.reducer;

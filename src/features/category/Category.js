@@ -9,6 +9,7 @@ import style from './category.module.css'
 
 const Category = () => {
 	const dispatch = useDispatch();
+	//get State from categorySLice.js:
 	const articlePreviews = useSelector(selectAllPreviews);
 	const isLoadingPreviews = useSelector(isLoading);
 	const hasLoadingError= useSelector(hasError);
@@ -17,14 +18,11 @@ const Category = () => {
 	if (!categoryName) {
 	  categoryName = 'popular';
 	}
-
- 
+	//reload Data everytime change are made to the state or when a new category is selected:
 	useEffect(() => {
 		dispatch(loadByCategory(categoryName));
 	}, [dispatch, categoryName]);
 
-	
- 
 	if (isLoadingPreviews) {
 	  return  <Loading />  
 	}
@@ -33,11 +31,12 @@ const Category = () => {
 		return( <ErrorPage />)	
 	}
  
+	//Render a list of Article Previews 
 	return (
 	  <div className={style.container}>
 		 {articlePreviews.map((article) => (
 			<ArticlePreview
-			  key={article.id} // Don't forget to add a unique key for each element in the map
+			  key={article.id} 
 			  id={article.id}
 			  img={article.img}
 			  title={article.title}
@@ -45,7 +44,7 @@ const Category = () => {
 			  text={article.text}
 			  subReddit={article.subReddit}
 			  comments={article.comments}
-			  vote={article.vote}
+			  votes={article.votes}
 			/>
 		 ))}
 	  </div>

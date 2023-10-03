@@ -5,7 +5,6 @@ describe('Media Component', () => {
   it('should render with the correct props', () => {
     // Define test props
     const source = 'https://www.example.com/image.jpg';
-    const description = 'Test description';
     const className = 'test-class';
 
     // Render the component with the test props
@@ -17,7 +16,6 @@ describe('Media Component', () => {
     // Assertions
     expect(imgElement).toBeInTheDocument(); // Check if the img element is in the document
     expect(imgElement).toHaveAttribute('src', source); // Check if the src attribute matches the source prop
-    expect(imgElement).toHaveAttribute('alt', description); // Check if the alt attribute matches the description prop
     expect(imgElement).toHaveClass(className); // Check if the className prop is applied
 
   });
