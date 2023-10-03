@@ -2,7 +2,7 @@
 
 
 
-![Visit Website](https://lite-reddit.netlify.app/) 
+[Visit Website](https://lite-reddit.netlify.app/) 
 
 
 
