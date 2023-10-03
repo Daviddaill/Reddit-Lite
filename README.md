@@ -2,9 +2,11 @@
 
 
 
-![Under Construction](https://www.fg-a.com/under-construction/under-construction-flashing-lights.gif)
+![Visit Website](https://lite-reddit.netlify.app/) 
 
-APP in progress...
+
+
+
 
 RedditLite is a simplified Reddit-like web application that allows users to search for articles by keywords 🔍, explore curated categories 📚, preview article results 👀, and read detailed articles 📖. It's a responsive app built using React ⚛️ and Redux 🔄, making it easy to access content from various devices 📱💻.
 
