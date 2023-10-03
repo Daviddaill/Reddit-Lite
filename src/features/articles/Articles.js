@@ -1,16 +1,15 @@
 import ArticlePreview from "../articlePreview/ArticlePreview";
 import { articles } from "../../data/data";
-
+import style from './articles.module.css'
 
 const Articles = () => {
 
 
   return (
-    <div >
+    <div className={style.container}>
       {
         articles.map((article) => {
-          return (
-                      
+          return (                     
             <ArticlePreview
               key={article.id}
               id={article.id}

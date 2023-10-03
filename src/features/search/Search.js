@@ -1,11 +1,13 @@
 import ArticlePreview from "../../features/articlePreview/ArticlePreview";
+import Loading from "../../component/loading/Loading";
+import ErrorPage from '../../component/errorPage/ErrorPage'
 //import {  articles } from "../../data/data";
 import {   useSearchParams } from "react-router-dom";
-import { selectAllArticles, isLoading, searchByTerm } from "./searchSlice";
+import { selectAllArticles, isLoading, searchByTerm , hasError} from "./searchSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 //import { getKeysBySearchTerm } from "../../util/helperFunctions";
-
+import css from './search.module.css';
 
 
 const Search = () => {
@@ -16,22 +18,28 @@ const Search = () => {
 	const searchTerm= searchParams.get('search');
 	//get the articles object
 	const articlePreviews = useSelector(selectAllArticles);
+	const hasErrorSearch = useSelector(hasError)
 	//get the status
-	const isLoadingPreviews = useSelector(isLoading);
+	const isLoadingSearch = useSelector(isLoading);
 
 	useEffect(() => {
 		dispatch(searchByTerm(searchTerm));
 	}, [dispatch, searchTerm]);
  
-	if (isLoadingPreviews) {
-	  return <p>Loading...</p>;
+	if (isLoadingSearch) {
+		return(<Loading/>)
+	  }
+	
+	  if (hasErrorSearch) {
+		return( <ErrorPage />)	
 	}
   
 	return (
-		<div >
+		<div className={css.container}>
 			{
                		articlePreviews.map(article => {
 					return (<ArticlePreview
+						key={article.id}
 						id={article.id}
 						img={article.img}
 						title={article.title}

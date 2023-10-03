@@ -10,30 +10,32 @@
 .title {
     text-align: center;
     padding:10px 20px;
+    font-size: 16px;
 }
 
 .mediaContainer{
-  margin: auto;
-  padding:0 20px;
+  margin: 0 auto;
+  padding:0 ;
   display:flex;
   justify-content: center;
+  align-items:flex-start;
 }
 
 .media {
   flex-shrink: 1;
-    max-width:700px;
+    max-width:350px;
     display: block;
-    padding:10px 20px;
+    padding:5px 0px;
 }
 
 .description{
-  padding:20px;
+  padding:5px 20px;
   text-align:justify;
+  font-size: 14px;
 }
 
 /*  parent container for: votes, comments, and subreddit sections */
 .subReddit {
-  margin-top:20px;
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
@@ -42,14 +44,20 @@
     flex-wrap: wrap;
     padding:10px 0;
 }
+.comments{
+max-width:700px;
+margin:20px auto;
+
+}
 
 /* on large screens, display subreddit container on the side of media  */
-@media screen and (max-width:1080px) {
+@media screen and (max-width:780px) {
   .mediaContainer{
   margin: auto;
   padding:0 20px;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .subReddit {
   margin-top:0px;
@@ -58,4 +66,27 @@
     align-items: flex-start;
     font-size: 12px;
 }
+.description{
+  font-size: 12px;
 }
+}
+
+
+@media screen and (max-width:480px) {
+  .card{
+    margin:0;
+    box-shadow:none
+}
+
+  .title{
+    font-size: 12px;
+  }
+  .description{
+  font-size: 10px;
+}
+.subReddit{
+  font-size: 10px;
+  gap:0px;
+}
+}
+

@@ -1,16 +1,17 @@
 import ArticlePreview from "../articlePreview/ArticlePreview";
-//import { categories, articles } from "../../data/data";
+import Loading from "../../component/loading/Loading";
+import ErrorPage from '../../component/errorPage/ErrorPage'
 import { useParams } from "react-router-dom";
-import { getDataByCategory } from "../../util/helperFunctions";
-import { useState, useEffect } from "react";
+import {  useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loadByCategory, isLoading, selectAllPreviews } from "./categorySlice";
-
+import { loadByCategory, isLoading, selectAllPreviews, hasError } from "./categorySlice";
+import style from './category.module.css'
 
 const Category = () => {
 	const dispatch = useDispatch();
 	const articlePreviews = useSelector(selectAllPreviews);
 	const isLoadingPreviews = useSelector(isLoading);
+	const hasLoadingError= useSelector(hasError);
 	let { categoryName } = useParams();
  
 	if (!categoryName) {
@@ -21,13 +22,19 @@ const Category = () => {
 	useEffect(() => {
 		dispatch(loadByCategory(categoryName));
 	}, [dispatch, categoryName]);
+
+	
  
 	if (isLoadingPreviews) {
-	  return <p>Loading...</p>;
+	  return  <Loading />  
+	}
+
+	if (hasLoadingError) {
+		return( <ErrorPage />)	
 	}
  
 	return (
-	  <div>
+	  <div className={style.container}>
 		 {articlePreviews.map((article) => (
 			<ArticlePreview
 			  key={article.id} // Don't forget to add a unique key for each element in the map

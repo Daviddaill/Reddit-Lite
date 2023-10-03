@@ -5,9 +5,15 @@ export const loadByCategory = createAsyncThunk(
   'articlePreviews/loadByCategory',
   async (category) => {
     const redditUrl = `https://www.reddit.com/r/${category}.json`;
-    const data = await fetch(redditUrl);
-    const json = await data.json();
-    
+    const response = await fetch(redditUrl);
+   // Check the HTTP status code and handle it
+    if (!response.ok) {
+      if (response.status === 429) {
+        // Handle the 429 error   
+        throw new Error('Rate limit exceeded');
+      } 
+    }
+    const json = await response.json();
     return json;
   }
 );
@@ -17,7 +23,7 @@ export const articlePreviewsSlice = createSlice({
   initialState: {
     articles: [],
     isLoadingArticlePreviews: false,
-    hasError: false
+    hasError: false,
   },
   //for all async thunk action use extra reducers instead of reducer
   extraReducers: (builder) => {
@@ -29,6 +35,7 @@ export const articlePreviewsSlice = createSlice({
       })
       .addCase(loadByCategory.fulfilled, (state, action) => {
         state.isLoadingArticlePreviews = false;
+        state.hasError = false;
         const res = action.payload.data.children;
         const list = res.map((article) => ({
         id: article.data.id,
@@ -53,6 +60,8 @@ export const articlePreviewsSlice = createSlice({
 
 export const selectAllPreviews = (state) => state.articlePreviews.articles;
 
-export const isLoading = (state) => state.articlePreviews.isLoading;
+export const isLoading = (state) => state.articlePreviews.isLoadingArticlePreviews;
+export const hasError= (state) => state.articlePreviews.hasError
+
 
 export default articlePreviewsSlice.reducer;

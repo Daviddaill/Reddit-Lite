@@ -1,16 +1,12 @@
-import { useRouteError } from "react-router-dom";
-
+import css from './errorPage.module.css'
 export default function ErrorPage() {
-  const error = useRouteError();
-  console.error(error);
-
+ 
   return (
-    <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
+    <div id="error-page" className={css.container}>
+      <h3 className={css.title}>Oops!</h3>
+      <p className={css.text} >Rate Limit Exceeded, please wait a few minutes...</p>
+
+      <img className={css.gif} src='https://i.gifer.com/origin/78/787899e9d4e4491f797aba5c61294dfc_w200.gif'></img>
     </div>
   );
 }

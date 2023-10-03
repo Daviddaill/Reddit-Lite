@@ -13,10 +13,10 @@ function Nav() {
 		<nav className={navCSS.nav} id='nav'>
 			<ul className={navCSS.ul}>
 				{
-					categories.map((category) => {
+					categories.map((category, index) => {
 						return (
-							<NavLink className={({ isActive }) => isActive? navCSS.activeNavLink : navCSS.inactiveNavLink} to={category.url} key={category.id}>
-								<li className={navCSS.li} key={`li${category.id}`}> {category.title} </li>
+							<NavLink className={({ isActive }) => isActive? navCSS.activeNavLink : navCSS.inactiveNavLink} to={category.url} key={index}>
+								<li className={navCSS.li} key={index}> {category.title} </li>
 							</NavLink>
 						)
 					})

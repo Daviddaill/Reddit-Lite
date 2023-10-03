@@ -1,25 +1,33 @@
 /* Main container */
 .nav {
-    width: 250px;
-    margin: 0;
-    padding: 0;
-    border-right: 1px solid rgb(226, 225, 225);
-  }
+  width:100%;
+  min-height: 40px;
+  padding: 0;
+  display: flex;
+  border-right: none;
+  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
   
 .ul {
     list-style-type: none;
     margin: 0;
     padding:0;
+    display: flex;
+    justify-content:center;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 .li {
     width: 100%;
-    padding:10px;
+    padding:10px 30px;
+    flex: 0 1;
 }
 
 .li:hover {
-    background-color: #1abc9c;
-    color: white;
+border-radius:4px;
+text-decoration: underline;
     font-weight:bolder ;
     cursor: pointer;
 }
@@ -37,7 +45,7 @@
       padding: 0;
       display: flex;
       border-right: none;
-      border-bottom: 1px solid rgb(214, 213, 213);
+      box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.2);
     }
   }
   /* list display as row */

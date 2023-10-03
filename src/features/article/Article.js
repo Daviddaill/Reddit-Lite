@@ -4,27 +4,35 @@ import Title from '../title/Title';
 import Description from '../description/Description';
 import Media from '../media/Media'
 import SubReddit from '../subReddit/SubReddit';
+import Comments from '../comments/Comments';
+import Loading from '../../component/loading/Loading'
+import ErrorPage from '../../component/errorPage/ErrorPage'
 //import { articles as data } from '../../data/data';
 import { useDispatch, useSelector } from 'react-redux';
-import { isLoadingArticle, selectArticle, loadArticleById,  } from './articleSlice';
+import { isLoadingArticle, selectArticle, loadArticleById, selectComments, hasErrorArticle } from './articleSlice';
 import { useEffect } from 'react';
-
-
 
 function Article() {
 	const dispatch = useDispatch();
 	const article = useSelector(selectArticle);
+  const commentList= useSelector(selectComments);
 	const isLoading = useSelector(isLoadingArticle);
+  const hasError= useSelector(hasErrorArticle)
   const { id }= useParams()
  
- 
-	useEffect(() => {
-		dispatch(loadArticleById(id));
-	}, [dispatch, id]);
+  useEffect(() => {
+   dispatch(loadArticleById(id));
+  }, [dispatch, id]);
  
 	if (isLoading) {
-	  return <p>Loading...</p>;
+	  return(<Loading/>)
 	}
+
+  if(hasError){
+    return( <ErrorPage />)	
+  }
+
+
 
   const { img, title, description, text, subReddit, comments, vote} = article;
   
@@ -35,6 +43,9 @@ function Article() {
       <div className={articlesCSS.mediaContainer}>
       <Media className={articlesCSS.media} source={img} description={description} />
       <SubReddit className={articlesCSS.subReddit} subReddit={subReddit} vote={vote} comments={comments} />
+      </div>
+      <div className={articlesCSS.comments}>
+        <Comments commentList={commentList}/>
       </div>
       
     </section>
