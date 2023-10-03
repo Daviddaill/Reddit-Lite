@@ -1,7 +1,6 @@
 import articleCSS from './articlePreview.module.css'
 import Title from '../title/Title';
 import Media from '../media/Media';
-import Description from '../description/Description';
 import SubReddit from '../subReddit/SubReddit';
 import { Link } from 'react-router-dom';
 

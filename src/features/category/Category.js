@@ -2,7 +2,7 @@ import ArticlePreview from "../articlePreview/ArticlePreview";
 import Loading from "../../component/loading/Loading";
 import ErrorPage from '../../component/errorPage/ErrorPage'
 import { useParams } from "react-router-dom";
-import {  useState, useEffect } from "react";
+import {  useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadByCategory, isLoading, selectAllPreviews, hasError } from "./categorySlice";
 import style from './category.module.css'

@@ -52,7 +52,7 @@ export const articleSlice = createSlice({
 				};
 				const commentsData = action.payload[1].data.children
 				const comments=[]
-				commentsData.map(comment=>{
+				commentsData.forEach(comment=>{
 					 comments.push({
 						author: comment.data.author,
 						text: comment.data.body
