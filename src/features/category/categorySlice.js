@@ -43,7 +43,7 @@ export const articlePreviewsSlice = createSlice({
         text: article.data.selftext,
         img: article.data.thumbnail,
         description: "",
-        votes: article.data.score,
+        score: article.data.score,
         comments: article.data.num_comments,
         subReddit: article.data.author,
         

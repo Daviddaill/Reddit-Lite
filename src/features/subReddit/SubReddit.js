@@ -1,13 +1,13 @@
 import style from './subReddit.module.css'
 
-const SubReddit = ({ subReddit, votes, comments, className }) => {
+const SubReddit = ({ subReddit, score, comments, className }) => {
 
   return (
     <div className={className} data-testid='subReddit'>
-      {/* Votes */}
+      {/* Score */}
       <div className={style.section} aria-label='number of votes'>
         <i className="fa-solid fa-arrow-up"></i>
-        <p>{votes}</p>
+        <p>{score}</p>
       </div>
       {/* Comments */}
       <div className={style.section} aria-label='number of comments'>

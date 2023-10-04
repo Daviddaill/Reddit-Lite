@@ -42,9 +42,9 @@ export const articleSlice = createSlice({
 					title: res.title,
 					id: res.id,
 					text: res.selftext,
-					img: res.thumbnail,
+					img: res.url,
 					description: "",
-					vote: res.score,
+					score: res.score,
 					comments: res.num_comments,
 					subReddit: res.author,
 				};

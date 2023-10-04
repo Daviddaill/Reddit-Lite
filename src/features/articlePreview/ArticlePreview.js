@@ -5,7 +5,7 @@ import SubReddit from '../subReddit/SubReddit';
 import { Link } from 'react-router-dom';
 
 
-function ArticlePreview({ id, img, title, description, subReddit, comments, votes }) {
+function ArticlePreview({ id, img, title, description, subReddit, comments, score }) {
   return (
     <div className={articleCSS.card} aria-label='article-preview' data-testid="article-preview">
       <Link to={`/articles/${id}`}  className={articleCSS.container}>
@@ -16,8 +16,8 @@ function ArticlePreview({ id, img, title, description, subReddit, comments, vote
             className={articleCSS.media} />
         </figure>
         <Title title={title} className={articleCSS.title} />
-        {/* SubRedit Component diplays  votes  comments  authors name */}
-        <SubReddit className={articleCSS.subReddit} votes={votes} comments={comments} subReddit={subReddit} type='preview' />
+        {/* SubRedit Component diplays  score  comments  authors name */}
+        <SubReddit className={articleCSS.subReddit} score={score} comments={comments} subReddit={subReddit} type='preview' />
       </Link>
     </div>
   )

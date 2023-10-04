@@ -44,7 +44,7 @@ const Category = () => {
 			  text={article.text}
 			  subReddit={article.subReddit}
 			  comments={article.comments}
-			  votes={article.votes}
+			  score={article.score}
 			/>
 		 ))}
 	  </div>

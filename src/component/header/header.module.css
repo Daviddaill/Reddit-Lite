@@ -38,27 +38,29 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 200px;
+    width: 200px;
     height: 30px;
     background-color: #fff;
     border-radius: 20px;
-    padding: 10px;
+    padding: 2px;
     margin-right: 20px;
-
+    transition: width 0.4s ease-in-out;
 }
 .searchContainer:hover{
-    box-shadow: 0 4px 20px 0 rgba(75, 75, 75, 0.2), 0 6px 10px 0 rgba(38, 38, 38, 0.2);
+    box-shadow: 0 4px 20px 0 rgba(73, 73, 73, 0.4), 0 6px 10px 0 rgba(50, 50, 50, 0.4);
+    width:300px
 }
 /* input field */
 .searchInput {
+    width:92%;
     flex: 1 1;
     height: 28px;
     border: none;
     outline: none;
     padding: 8px;
     border-radius: 20px;
-    /* Rounded corners */
 }
+
 /* iccon */
 #searchIcon {
     padding: 6px;
