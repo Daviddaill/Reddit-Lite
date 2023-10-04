@@ -52,29 +52,14 @@ export const articleSlice = createSlice({
 				const commentsData = action.payload[1].data.children
 				const comments=[]
 				commentsData.forEach(comment=>{
-					//const replies=[];
 					 const repliesData= comment.data.replies?.data?.children;
-					console.log(repliesData)
-					// console.log(repliesData.children[0].data)
-					// repliesData?.forEach(reply=>{
-					// 	replies.push({
-					// 		author: reply.data.author,
-					// 		text: reply.data.body
-					// 	})
-					// })
-
 					 comments.push({
 						author: comment.data.author,
 						text: comment.data.body,
 						replies: repliesData
-						//replies:comment.data.replies.dtata.children[0]
-					
-						//replies: repplies
 					})
 				});
-				state.comments= comments;
-				
-				
+				state.comments= comments;			
 			})
 			.addCase(loadArticleById.rejected, (state, action) => {
 				state.isLoadingArticle = false;
