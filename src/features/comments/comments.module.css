@@ -1,16 +1,17 @@
 .container{
     margin:20px auto;
     max-width:700px;
-    background-color: rgb(245, 245, 245);
+    background-color: rgb(248, 248, 248);
+   
 }
 .comments{
-    padding:5px;
+    margin-top:5px;
     max-width:100%;
-    
+    border-left: 1px dotted rgb(189, 189, 189);
 }
 .comment{
-    margin:20px auto ;
-    padding:30px;
+    margin:0px auto ;
+    padding:10px 20px;
     border-radius: 4px;
     background-color: white;
 }
@@ -23,4 +24,24 @@
 }
 .text{
     font-size: 12px;
+}
+.replyButton{
+    font-size: 10px;
+    text-decoration: underline;
+    padding:5px;
+    cursor:pointer;
+    color:black;
+}
+.replyButton:hover{
+    color:#108d74
+}
+
+.reply{
+    display:block;
+    margin-left:20px;
+    border-left: 1px dotted rgb(189, 189, 189);
+}
+
+.hideReply{
+    display:none
 }
